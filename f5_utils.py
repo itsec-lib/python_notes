@@ -1,6 +1,6 @@
 import requests, json
 
-class F5LTM():
+class F5():
 
       def __init__(self, ip, port=22, username=None, password=None, device_type=None):
         """
@@ -33,6 +33,6 @@ class F5LTM():
             verify=False,
             auth=(self.username, self.password),json=body)\
             .json()
-        token = token_response['token']['token']
-        return token
+        self.token = token_response['token']['token']
+        return self.token
         
